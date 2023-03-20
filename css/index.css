@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -15,81 +17,84 @@ a {
 
 body {
   min-height: 100vh;
-  background: #f8f8ff;
 }
 
 #header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 30px 100px;
-}
-#header .header-wrap {
+  padding: 20px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
-  margin: 0 auto;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
-#header .header-wrap ul {
+#header > a {
+  font-family: "Shadows Into Light", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-left: 150px;
+}
+#header ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-#header .header-wrap ul a {
+#header ul li {
   padding: 6px 15px;
-  border-radius: 20px;
+  border-radius: 25% 75% 40% 60%/51% 64% 36% 49%;
+}
+#header ul li a {
   font-size: 1.25em;
 }
-#header .header-wrap ul a:hover, #header .header-wrap ul a.hover {
+#header ul li.active {
   background: #112434;
+}
+#header ul li.active a {
+  font-size: 1.25em;
   color: #fff;
 }
 
 #home {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
-#home #txt {
-  position: absolute;
-  color: #fff;
-  z-index: 1;
-  font-size: 4.25em;
-  font-weight: 900;
-  white-space: nowrap;
-  text-transform: uppercase;
-  -webkit-text-stroke: 1px #112434;
+#home .content {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-#home img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+#home .content h2 {
+  font-size: 4em;
+  font-family: "Shadows Into Light", sans-serif;
+}
+#home .content a {
+  width: 220px;
+  height: 80px;
+  background-color: #f00;
+  text-align: center;
+  line-height: 80px;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 #about {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
 }
-#about h2 {
-  top: 150px;
-  left: 200px;
-  position: absolute;
-  text-transform: uppercase;
-  font-size: 3em;
-  color: #fff;
-  -webkit-text-stroke: 1px #112434;
+
+#portfolio {
+  min-height: 100vh;
+}
+
+#contact {
+  min-height: 100vh;
 }/*# sourceMappingURL=index.css.map */

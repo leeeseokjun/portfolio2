@@ -1,8 +1,10 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 ul{
     list-style: none;
@@ -13,34 +15,42 @@ a{
 }
 body{
     min-height: 100vh;
-    background: #f8f8ff;
+    // background: #f8f8ff;
 }
 #header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    padding: 30px 100px;
-    .header-wrap{
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    > a{
+        font-family: 'Shadows Into Light', sans-serif;
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-left: 150px;
+    }
+    ul{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        width: 1200px;
-        margin: 0 auto;
-        ul{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
+        gap: 40px;
+        li{
+            padding: 6px 15px;
+            border-radius: 25% 75% 40% 60% / 51% 64% 36% 49%;
             a{
-                padding: 6px 15px;
-                border-radius: 20px;
                 font-size: 1.25em;
-                &:hover, &.hover{
-                    background: #112434;
-                    color: #fff;
-                }
+            }
+        }
+        li.active{
+            background: #112434;
+            a{
+                font-size: 1.25em;
+                color: #fff;
             }
         }
     }
@@ -48,43 +58,36 @@ body{
 #home{
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    #txt{
-        position: absolute;
-        color: #fff;
-        z-index: 1;
-        font-size: 4.25em;
-        font-weight: 900;
-        white-space: nowrap;
-        text-transform: uppercase;
-        -webkit-text-stroke: 1px #112434;
-    }
-    img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .content{
+        max-width: 650px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h2{
+            font-size: 4em;
+            font-family: 'Shadows Into Light', sans-serif;
+        }
+        a{
+            width: 220px;
+            height: 80px;
+            background-color: #f00;
+            text-align: center;
+            line-height: 80px;
+            font-weight: bold;
+            font-size: 2em;
+        }
     }
 }
 #about{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2{
-        top: 150px;
-        left: 200px;
-        position: absolute;
-        text-transform: uppercase;
-        font-size: 3em;
-        color: #fff;
-        -webkit-text-stroke: 1px #112434;
-    }
+    min-height: 100vh;
+}
+#portfolio{
+    min-height: 100vh;
+}
+#contact{
+    min-height: 100vh;
 }
