@@ -38,10 +38,22 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-right: 100px;
         gap: 40px;
         li{
             padding: 6px 15px;
-            border-radius: 25% 75% 40% 60% / 51% 64% 36% 49%;
+            &:nth-child(1){
+                border-radius: 25% 75% 40% 60% / 51% 64% 36% 49%;
+            }
+            &:nth-child(2){
+                border-radius: 48% 52% 45% 55% / 64% 67% 33% 36%;
+            }
+            &:nth-child(3){
+                border-radius: 62% 38% 72% 28% / 26% 74% 26% 74%;
+            }
+            &:nth-child(4){
+                border-radius: 40% 60% 26% 74% / 56% 46% 54% 44%;
+            }
             a{
                 font-size: 1.25em;
             }
@@ -63,7 +75,7 @@ body{
     justify-content: center;
     align-items: center;
     .content{
-        max-width: 650px;
+        max-width: 550px;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -79,6 +91,46 @@ body{
             line-height: 80px;
             font-weight: bold;
             font-size: 2em;
+            border-radius: 20px;
+            border: 2px solid #333;
+        }
+    }
+    img:nth-child(2){
+        position: relative;
+        left: 100px;
+        animation: animateLeft 5s ease-in-out infinite;
+    }
+    @keyframes animateLeft{
+        0%,100%{
+            transform: translateY(0px);
+        }
+        50%{
+            transform: translateY(60px);
+        }
+    }
+    img:nth-child(3){
+        position: relative;
+        animation: animateCenter 5.5s ease-in-out infinite;
+    }
+    @keyframes animateCenter{
+        0%,100%{
+            transform: translateY(0px);
+        }
+        50%{
+            transform: translateY(60px);
+        }
+    }
+    img:nth-child(4){
+        position: relative;
+        right: 80px;
+        animation: animateRight 6s ease-in-out infinite;
+    }
+    @keyframes animateRight{
+        0%,100%{
+            transform: translateY(0px);
+        }
+        50%{
+            transform: translateY(60px);
         }
     }
 }
